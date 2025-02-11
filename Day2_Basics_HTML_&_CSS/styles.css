@@ -1,0 +1,13 @@
+body { font-family: Arial, sans-serif; }
+header, footer { background: #f8f8f8; padding: 10px; }
+nav ul { list-style-type: none; padding: 0; }
+nav ul li { display: inline; margin-right: 10px; }
+section, article, aside { margin: 20px 0; }
+figure { margin: 0; }
+/* [lang="en"] {} */
+a:hover {
+    color: red;
+}
+h2 ~ p {
+    color: red;
+}

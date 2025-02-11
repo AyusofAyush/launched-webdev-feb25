@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Tags Example</title>
+    <!-- <style>
+        body { font-family: Arial, sans-serif; }
+        header, footer { background: #f8f8f8; padding: 10px; }
+        nav ul { list-style-type: none; padding: 0; }
+        nav ul li { display: inline; margin-right: 10px; }
+        section, article, aside { margin: 20px 0; }
+        figure { margin: 0; }
+        /* [lang="en"] {} */
+        a:hover {
+            color: red;
+        }
+        h2 ~ p {
+            color: red;
+        }
+    </style> -->
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    /> -->
+  </head>
+  <body>
+    <header class="class-name text-align" id="header-id">
+      <h1>Welcome to My Website</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="button-group">
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-light">Light</button>
+        <button type="button" class="btn btn-dark">Dark</button>
+
+        <button type="button" class="btn btn-link">Link</button>
+      </section>
+      <section class="section-1">
+        <h2>About Us</h2>
+        <p>This is a paragraph with a <a href="#">link</a>.</p>
+        <p><strong>Bold text</strong> and <em>italic text</em>.</p>
+        <p>
+          <abbr title="Hypertext Markup Language">HTML</abbr> and
+          <abbr title="Cascading Style Sheets">CSS</abbr>.
+        </p>
+        <blockquote cite="https://www.example.com">
+          <p>This is a blockquote from an external source.</p>
+        </blockquote>
+        <p>Here is a code snippet:</p>
+        <pre><code>console.log('Hello, world!');</code></pre>
+      </section>
+
+      <!-- #media-section-1 {style} -->
+      <section id="media-section-1">
+        <h2>Media</h2>
+        <img
+        src="https://images.unsplash.com/photo-1739045193736-8d0f198e292a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/
+        alt="unsplash" width="300" height="200">
+        <span>Inline Text here</span>
+        <figure>
+          <img src="https://via.placeholder.com/150" alt="Broken Image" />
+          <figcaption>Placeholder Image</figcaption>
+        </figure>
+        <audio controls>
+          <source src="audio.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <video controls width="300">
+          <source src="video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+
+      <section>
+        <h2>Lists</h2>
+        <ul>
+          <li>Unordered list item 1</li>
+          <li>Unordered list item 2</li>
+        </ul>
+        <ol>
+          <li>Ordered list item 1</li>
+          <li>Ordered list item 2</li>
+        </ol>
+        <dl>
+          <dt>Definition Term</dt>
+          <dd>Definition Description</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h2>Forms</h2>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" /><br /><br />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" /><br /><br />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" /><br /><br />
+          <label for="birthday">Birthday:</label>
+          <input type="date" id="birthday" name="birthday" /><br /><br />
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+      <hr />
+      <section>
+        <h2>Tables</h2>
+        <table border="1">
+          <caption>
+            Sample Table
+          </caption>
+          <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+          </tr>
+          <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+          </tr>
+          <tr>
+            <td>Data 3</td>
+            <td>Data 4</td>
+          </tr>
+        </table>
+
+        <h2>Sematic Table</h2>
+        <table border="2">
+          <caption>
+            Front-end web developer course 2021
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Person</th>
+              <th scope="col">Most interest in</th>
+              <th scope="col">Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Chris</th>
+              <td>HTML tables</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <th scope="row">Dennis</th>
+              <td>Web accessibility</td>
+              <td>45</td>
+            </tr>
+            <tr>
+              <th scope="row">Sarah</th>
+              <td>JavaScript frameworks</td>
+              <td>29</td>
+            </tr>
+            <tr>
+              <th scope="row">Karen</th>
+              <td>Web performance</td>
+              <td>36</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="2">Average age</th>
+              <td>33</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section>
+        <h2>Interactive Elements</h2>
+        <details>
+          <summary>More info</summary>
+          <p>Details content goes here.</p>
+        </details>
+        <dialog open>
+          <p>Dialog content goes here.</p>
+          <button>Close</button>
+        </dialog>
+        <progress value="50" max="100"></progress>
+      </section>
+      <template id="my-template">
+        <p>This is a template.</p>
+      </template>
+    </main>
+
+    <aside>
+      <h2>Related Links</h2>
+      <ul>
+        <li><a href="#link1">Related Link 1</a></li>
+        <li><a href="#link2">Related Link 2</a></li>
+      </ul>
+    </aside>
+
+    <!-- <iframe
+      src="https://www.w3schools.com/html/html_blocks.asp"
+      width="600"
+      height="400"
+      sandbox="allow-scripts"
+      allow="autoplay"
+    ></iframe> -->
+    <mark>Marked text</mark>
+    <p>H<sub>2</sub>O</p>
+
+    <select name="options">
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+    </select>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <fieldset>
+      <legend>Group Name</legend>
+      <label for="name">Name:</label>
+      <input id="name" type="text" />
+    </fieldset>
+    <!-- article section below -->
+    <section class="article-section">
+      <h1>The article element</h1>
+
+      <article>
+        <h2>Google Chrome</h2>
+        <p>
+          Google Chrome is a web browser developed by Google, released in 2008.
+          Chrome is the world's most popular web browser today!
+        </p>
+      </article>
+
+      <article>
+        <h2>Mozilla Firefox</h2>
+        <p>
+          Mozilla Firefox is an open-source web browser developed by Mozilla.
+          Firefox has been the second most popular web browser since January,
+          2018.
+        </p>
+      </article>
+
+      <article>
+        <h2>Microsoft Edge</h2>
+        <p>
+          Microsoft Edge is a web browser developed by Microsoft, released in
+          2015. Microsoft Edge replaced Internet Explorer.
+        </p>
+      </article>
+      <meter value="0.6">60%</meter>
+      <textarea name="message"></textarea>
+    </section>
+
+    <details>
+      <summary>More Info</summary>
+      <p>Details go here</p>
+    </details>
+
+    <address>
+      Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br />
+      Visit us at:<br />
+      Example.com<br />
+      Box 564, Disneyland<br />
+      USA
+    </address>
+
+    <footer>
+      <p>&copy; 2024 My Website</p>
+    </footer>
+  </body>
+</html>
