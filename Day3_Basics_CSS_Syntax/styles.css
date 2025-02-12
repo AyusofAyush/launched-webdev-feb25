@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header,
+footer {
+    background: #f8f8f8;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+section,
+article,
+aside {
+    margin: 20px 0;
+}
+
+figure {
+    margin: 0;
+}
+
+/* [lang="en"] {} */
+a:hover {
+    color: red;
+}
+
+h2~p {
+    color: red;
+}
+
+/* ID selector */
+#header-id {
+    text-decoration: underline;
+    color: green;
+}
+
+/* class Selector */
+.class-name {
+    color: blue;
+    /* background: black; */
+}
+
+/* Attribute Selector */
+[data-ayush="demo"] {
+    border: 5px solid red;
+}
+
+/* Pseudo-class selector */
+.hover-me:hover {
+    background: black;
+    color: yellow;
+}
+
+/* Pseudo-elements */
+p::after {
+    content: "<END of P>";
+    width: 40px;
+    height: 50px;
+    background: pink;
+}
+
+/* Descendant Selector */
+.section-1 p {
+    background-color: aqua;
+}
+
+/* Child Selector */
+.section-1>.blockquote-p {
+    background-color: orange;
+}
+
+/* Adjacent Sibling Selector */
+.sibling+h2 {
+    color: lightgreen;
+}
+
+/* General Sibling Selector */
+.sibling~p {
+    color: darkmagenta;
+}
+
+.button-group {
+    /* Below !important is discouraged and should be used only when very much required */
+    /* border: 100px solid yellow !important; */
+}
+
+/* Pseudo-Elements usecase */
+p::before {
+    content: "🔥 ";
+}
