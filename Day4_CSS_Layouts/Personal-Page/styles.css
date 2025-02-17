@@ -1,0 +1,100 @@
+/* Universal CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Utility CSS */
+
+.flex {
+    display: flex;
+}
+.flex.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex.left-align {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.column {
+    flex-direction: column;
+}
+
+/* required CSS styling */
+
+/* <--- focus here */
+
+body {
+    min-height: max(100vh, 940px); /* <--- focus here */
+    height: 100%;
+    background-image: url('./background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.container {
+    padding: 2%;
+    height: 100vh; /* <--- focus here */
+}
+.main-section {
+    gap: 20px;
+    min-height: 900px; /* <--- focus here */
+    height: 100%; /* <--- focus here */
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20% 10%;
+    color: grey;
+    border-radius: 20px;
+}
+.main-section h1 {
+    width: 100%;
+    /* text-align: center; */
+    color: black;
+    font-size: 40px;
+}
+.profile-pic {
+    border-radius: 50%;
+    width: 200px;
+    min-height: 200px; 
+    height: 200px; /* <--- focus here */
+    overflow: hidden; /* <--- focus here */
+}
+
+/* required css for img */
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* <--- focus here */
+    object-position: top; /* <--- focus here */
+}
+
+.touch-me-btn {
+    border-radius: 16px;
+    background-color: black;
+    color: grey;
+    padding: 16px 28px;
+    font-size: 16px;
+    border: 0;
+}
+.touch-me-btn:hover {
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+}
+
+.social-media-icons {
+    gap: 10px;
+}
+.fab {
+    font-size: 32px;
+    color: black;
+}
+.fab:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Card Layout</title>
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 10px;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: calc(33.333% - 20px);
+        }
+        .card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .card {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+            <h3>Card Title</h3>
+            <p>Some description text for the card.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+            <h3>Card Title</h3>
+            <p>Some description text for the card.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+            <h3>Card Title</h3>
+            <p>Some description text for the card.</p>
+        </div>
+    </div>
+</body>
+</html>
