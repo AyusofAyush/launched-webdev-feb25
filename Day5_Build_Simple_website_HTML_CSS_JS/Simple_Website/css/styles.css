@@ -1,0 +1,221 @@
+/* Universal CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Utility CSS */
+
+.flex {
+  display: flex;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+/* Fix height of the website */
+body {
+  min-height: 100vh;
+  /* <--- focus here */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* <--- focus here */
+  justify-content: space-between;
+  /* <--- focus here */
+}
+
+/* Navbar styles below */
+
+.navbar-parent {
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #eee;
+  height: 80px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 100%;
+  margin: 0 auto;
+  /* Center the container if needed */
+}
+
+.nav-link {
+  padding: 12px 20px;
+}
+
+.nav-link:hover {
+  cursor: pointer;
+  color: white;
+  background-color: darkgrey;
+  font-size: 16px;
+}
+
+/* responsive img style */
+.logo-div img {
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar-parent > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar-parent {
+    flex-direction: column;
+    height: auto;
+    border: 1px solid grey;
+  }
+
+  .navbar-parent > div {
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .navbar-parent > div {
+    font-size: 40px;
+  }
+}
+
+/* main tag css below */
+.main-parent {
+  margin: 0 10%;
+  margin-top: 5%;
+  width: 80%;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 500px) {
+  .main-parent {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.main-left {
+  width: 50%;
+  justify-content: space-evenly;
+}
+
+.main-left > div,
+h3,
+p,
+button {
+  margin: 10px 0;
+}
+
+.main-left h1 {
+  font-size: 40px;
+  color: grey;
+}
+
+.main-left h3 {
+  font-size: 24px;
+  color: brown;
+}
+
+.main-left p {
+  font-size: 16px;
+  color: green;
+}
+
+.main-left .btn {
+  background: url(../assets/btn.png) no-repeat;
+  background-position: 0 -70px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 16px;
+  padding: 10px 20px;
+  width: 150px;
+
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-position: 0 0;
+  color: #f99400;
+  cursor: pointer;
+}
+
+.main-right {
+  max-width: 50%;
+}
+
+.main-right img {
+  height: auto;
+  width: 200px;
+}
+
+/* sections css below */
+
+.sections {
+  gap: 10px;
+  margin: 0 10%;
+  margin-top: 2%;
+  border-top: 1px solid lightgrey;
+}
+
+.sections h3 {
+  margin-top: 5%;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.para-sections > p {
+  padding: 10px;
+  font-size: 14px;
+  color: lightseagreen;
+}
+
+@media screen and (max-width: 500px) {
+  .para-sections {
+    flex-direction: column;
+  }
+}
+
+/* footer css below */
+.footer {
+  margin-top: 5%;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #eee;
+  padding: 10px 10px;
+}
+
+.copyright {
+  font-size: 14px;
+}
+
+.social-icons {
+  gap: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
