@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        background-color: lightblue;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="header">Welcome to JS Day</h1>
+
+    <form name="f1" action="#" onsubmit="return validate()">
+      <table>
+        <tr>
+          <td>Enter Email:</td>
+          <td>
+            <input type="text" name="email" /> <span id="emailVal"></span>
+          </td>
+        </tr>
+        <!-- <tr>
+          <td>Enter Name:</td>
+          <td><input type="text" name="name" /> <span id="nameloc"></span></td>
+        </tr>
+        <tr>
+          <td>Enter Password:</td>
+          <td>
+            <input type="password" name="password" />
+            <span id="passwordloc"></span>
+          </td>
+        </tr> -->
+        <tr>
+          <td colspan="2"><input type="submit" value="register" /></td>
+        </tr>
+      </table>
+    </form>
+
+    <script src="./app.js" type="text/javascript"></script>
+
+    <script>
+      function validate() {
+        // let name = document.f1.name.value;
+        // let password = document.f1.password.value;
+
+        let status = false;
+
+        // if (name.length < 3) {
+        //   document.getElementById("nameloc").innerHTML =
+        //     " <sup>*</sup>IMP: Please enter your name";
+        //   status = false;
+        // } else {
+        //   document.getElementById("nameloc").innerHTML =
+        //     " <sup>*</sup>IMP: ";
+        //   status = true;
+        // }
+        // if (password.length < 6) {
+        //   document.getElementById("passwordloc").innerHTML =
+        //     " <sup>*</sup>IMP: Password must be at least 6 char long";
+        //   status = false;
+        // } else {
+        //   document.getElementById("passwordloc").innerHTML =
+        //     " <sup>*</sup>IMP:";
+        // }
+        let email = document.f1.email.value;
+        // console.log('Email entered', email);
+        let emailRegEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (emailRegEx.test(email)) {
+          document.getElementById("emailVal").innerText = "WOW! Valid Email";
+          console.log("Valid Email", email);
+          status = true;
+        } else {
+          document.getElementById("emailVal").innerText = "Alas! invalid email";
+          console.log("Invalid Email entered");
+          status = false;
+        }
+
+        return status;
+      }
+    </script>
+  </body>
+</html>
