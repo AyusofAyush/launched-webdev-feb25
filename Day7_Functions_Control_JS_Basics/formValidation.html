@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+</head>
+<body>
+  <h1>Form Validation Example</h1>
+  <form id="myForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br><br>
+
+    <button type="submit">Submit</button>
+    <p id="error-message" style="color:red;"></p>
+  </form>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Get form values
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Validate the inputs
+      let errorMessage = '';
+      
+      if (username === '') {
+        errorMessage += 'Username is required.<br>';
+      }
+      if (!email.includes('@')) {
+        errorMessage += 'Email must be valid.<br>';
+      }
+      if (password.length < 6) {
+        errorMessage += 'Password must be at least 6 characters long.<br>';
+      }
+
+      // Show error message or submit form
+      const errorDisplay = document.getElementById('error-message');
+      if (errorMessage) {
+        errorDisplay.innerHTML = errorMessage;
+      } else {
+        errorDisplay.innerHTML = '';
+        alert('Form submitted successfully!');
+        // Here, you can add logic to submit the form data via AJAX or another method.
+      }
+    });
+  </script>
+</body>
+</html>
