@@ -1,0 +1,154 @@
+/* 
+  style.css 
+  Modern KBC-style quiz design with dark theme, glowing highlights, and clean typography
+*/
+
+/* Reset some default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Background */
+body {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(120deg, #1d1f27, #252a3f);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quiz Container */
+.quiz-container {
+  width: 90%;
+  max-width: 600px;
+  background: #2c2f3a;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/* Header */
+.quiz-header {
+  background: radial-gradient(circle, #3c4160, #2c2f3a);
+  padding: 20px 10px;
+  border-bottom: 2px solid #444857;
+}
+
+.quiz-title {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: #ffcc00; /* KBC gold */
+  text-transform: uppercase;
+}
+
+/* Footer */
+.quiz-footer {
+  padding: 10px;
+  background-color: #3c4160;
+  border-top: 2px solid #444857;
+  font-size: 0.9rem;
+}
+
+/* Quiz Content */
+.quiz-content {
+  padding: 20px;
+}
+
+/* Question Number */
+.question-number {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #ffcc00;
+}
+
+/* Question Text */
+.question-text {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+/* Options List */
+.options-list {
+  list-style: none;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.options-list li {
+  background: #3b3e4a;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 1px solid #4e5264;
+}
+
+.options-list li:hover {
+  background: #484b59;
+}
+
+/* Next / Restart Buttons */
+.btn {
+  background-color: #ffcc00;
+  border: none;
+  color: #000;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Next Button */
+.next-btn {
+  margin-top: 10px;
+}
+
+/* Scoreboard */
+.scoreboard {
+  padding: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.score-message {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Restart Button */
+.restart-btn {
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  font-weight: 700;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Correct / Incorrect option highlights */
+.correct-option {
+  background-color: #22bb33 !important;
+  color: #fff;
+}
+
+.incorrect-option {
+  background-color: #bb2124 !important;
+  color: #fff;
+}
