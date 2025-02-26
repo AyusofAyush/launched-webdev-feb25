@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Photo Gallery</title>
+    <!-- Include jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      /* Basic Reset & Body Styling */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+        padding: 20px;
+      }
+      header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      header h1 {
+        font-size: 2.5rem;
+        color: #333;
+      }
+      /* Filter Buttons */
+      .filters {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .filters button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        background: #007bff;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+      .filters button:hover {
+        background: #0056b3;
+      }
+      /* Gallery Grid */
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+      }
+      .gallery-item {
+        width: calc(25% - 15px);
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding-top: 100px;
+        text-align: center;
+      }
+      .modal-content {
+        max-width: 80%;
+        max-height: 80%;
+        border-radius: 8px;
+      }
+      .modal-close {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+      }
+      /* Responsive */
+      @media (max-width: 768px) {
+        .gallery-item {
+          width: calc(50% - 15px);
+        }
+      }
+      @media (max-width: 480px) {
+        .gallery-item {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>jQuery Photo Gallery</h1>
+    </header>
+
+    <!-- Filter Buttons -->
+    <div class="filters">
+      <button data-filter="all">All</button>
+      <button data-filter="nature">Nature</button>
+      <button data-filter="city">City</button>
+      <button data-filter="people">People</button>
+    </div>
+
+    <!-- Gallery Items -->
+    <div class="gallery">
+      <div class="gallery-item" data-category="nature">
+        <img
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-1.2.1&w=400&h=300&fit=crop"
+          alt="Nature 1"
+        />
+      </div>
+      <div class="gallery-item" data-category="city">
+        <img
+          src="https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-1.2.1&w=400&h=300&fit=crop"
+          alt="City 1"
+        />
+      </div>
+      <div class="gallery-item" data-category="people">
+        <img
+          src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&w=400&h=300&fit=crop"
+          alt="People 1"
+        />
+      </div>
+      <div class="gallery-item" data-category="nature">
+        <img
+          src="https://images.unsplash.com/photo-1516908205727-40afad9449f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
+          alt="Nature 2"
+        />
+      </div>
+      <div class="gallery-item" data-category="city">
+        <img
+          src="https://images.unsplash.com/photo-1496619688712-0058d0f27ed7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
+          alt="City 2"
+        />
+      </div>
+      <div class="gallery-item" data-category="people">
+        <img
+          src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-1.2.1&w=400&h=300&fit=crop"
+          alt="People 2"
+        />
+      </div>
+      <div class="gallery-item" data-category="nature">
+        <img
+          src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&w=400&h=300&fit=crop"
+          alt="Nature 3"
+        />
+      </div>
+      <div class="gallery-item" data-category="city">
+        <img
+          src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&w=400&h=300&fit=crop"
+          alt="City 3"
+        />
+      </div>
+    </div>
+
+    <!-- Modal for Full-Size Image -->
+    <div class="modal" id="imgModal">
+      <span class="modal-close">&times;</span>
+      <img class="modal-content" id="modalImage" alt="Full Size" />
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // Filter Gallery Items
+        $(".filters button").click(function () {
+          var filter = $(this).attr("data-filter");
+          if (filter === "all") {
+            $(".gallery-item").fadeIn();
+          } else {
+            $(".gallery-item").each(function () {
+              $(this).attr("data-category") === filter
+                ? $(this).fadeIn()
+                : $(this).fadeOut();
+            });
+          }
+        });
+
+        // Open Modal on Image Click
+        $(".gallery-item img").click(function () {
+          var src = $(this).attr("src").replace("400x300", "800x600"); // Simulate a larger image
+          $("#modalImage").attr("src", src);
+          $("#imgModal").fadeIn();
+        });
+
+        // Close Modal
+        $(".modal-close, #imgModal").click(function (event) {
+          if (event.target !== $("#modalImage")[0]) {
+            $("#imgModal").fadeOut();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
