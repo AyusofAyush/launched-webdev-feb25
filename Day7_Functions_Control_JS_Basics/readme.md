@@ -339,7 +339,7 @@ check app.js
 ```
 
 ## Javascript Cookies
-```
+
 A cookie is an amount of information that persists between a server-side and a client-side. A web browser stores this information at the time of browsing.
 
 A cookie contains the information as a string generally in the form of a name-value pair separated by semi-colons. It maintains the state of a user and remembers the user's information among all the web pages.
@@ -349,22 +349,40 @@ A cookie contains the information as a string generally in the form of a name-va
 - So, to recognize the old user, we need to add the cookie with the response from the server.
 - browser at the client-side.
 - Now, whenever a user sends a request to the server, the cookie is added with that request automatically. Due to the cookie, the server recognizes the users.
-```
+
 
 ## Javascript Events
 ```
 check app.js
 ```
 
-`start in next session`
+## JS closures
 
-### JS closures
+```javascript
+"use strict";
+// Global Scope
+let a = 3;
+function outerFunction() {
+    // outer Function scope
+    // let a;
+    function myFunction() {
+        // myFunction scope
+        a = 4;
+      return a * a;
+    }
+    myFunction();
+    console.log('OutFunction', a);
+}
+outerFunction();
+console.log(a);
+```
 
+> not covered here [refer](https://www.w3schools.com/js/js_function_closures.asp)
 
 ### JS Async
-- JS Callback
-- Promises
-- Async Await
+- JS Callback (callback hell [refer](https://www.geeksforgeeks.org/what-to-understand-callback-and-callback-hell-in-javascript/))
+- Promises ([refer](https://www.programiz.com/javascript/promise))
+- Async Await ([refer](https://www.programiz.com/javascript/async-await))
 
 ### JS Async programming
 
@@ -401,8 +419,9 @@ function removeNeg(numbers, callback) {
 }
 
 
-`Asynchronous JavaScript`
+## `Asynchronous JavaScript`
 
+```
 "I will finish later!"
 
 Functions running in parallel with other functions are called asynchronous
@@ -420,10 +439,11 @@ function myFunction() {
   d.getMinutes() + ":" +
   d.getSeconds();
 }
+```
 
+## JavaScript Promises 
 
-`JavaScript Promises`
-
+```
 "I Promise a Result!"
 
 "Producing code" is code that can take some time
@@ -431,24 +451,24 @@ function myFunction() {
 "Consuming code" is code that must wait for the result
 
 A Promise is an Object that links Producing code and Consuming code
+```
 
 
-
-Promise Object Properties
+> Promise Object Properties
 A JavaScript Promise object can be:
 
 - Pending
 - Fulfilled
 - Rejected
 
-
+```
 myPromise.state	        myPromise.result
 "pending"	                undefined
 "fulfilled"	                a result value
 "rejected"	                an error object
-
+```
 e.g:
-
+```javascript
 function myDisplayer(some) {
   document.getElementById("demo").innerHTML = some;
 }
@@ -464,9 +484,10 @@ let myPromise = new Promise(function(resolve, reject) {
     reject("Error");
   }
 });
+```
 
 // how to consume it ?
-
+```javascript
 myPromise
   .then((value) => {
     myDisplayer(value)
@@ -480,19 +501,20 @@ myPromise
     myDisplayer(error)
   }
 );
+```
 
+## `JavaScript Async Await`
 
-`JavaScript Async Await`
-
+```
 "async and await make promises easier to write"
 
 async makes a function return a Promise
 
 await makes a function wait for a Promise
-
+```
 
 e.g.:
-
+```javascript
 async function getFile() {
   let myPromise = new Promise(function(resolve) {
     let req = new XMLHttpRequest();
@@ -510,6 +532,11 @@ async function getFile() {
 }
 
 getFile();
+```
+
+### Event Loop 
+What the heck is event loop ?
+[watch](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 
 -----
 
