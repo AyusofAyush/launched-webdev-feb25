@@ -36,9 +36,14 @@ router.post('/posts', async (req, res, next) => {
          });
  
          // Save the post to the database
-         const savedPost = await newPost.save();
- 
-         successResponse(res, savedPost, 201);
+         if (userExists) {
+           const savedPost = await newPost.save();
+           successResponse(res, savedPost, 201);
+         } else {
+           const error = new Error("Author ID is required");
+           error.statusCode = 400;
+           next(error);
+         }
     } catch (error) {
         error.statusCode = 500;
         next(error);
