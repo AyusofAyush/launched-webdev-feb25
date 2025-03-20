@@ -1,0 +1,22 @@
+<!-- views/articles/index.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles</title>
+    <style>
+      body {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Articles</h1>
+    <ul>
+      <% articles.forEach(article => { %>
+      <li>
+        <a href="/articles/<%= article._id %>"><%= article.title %></a>
+      </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
