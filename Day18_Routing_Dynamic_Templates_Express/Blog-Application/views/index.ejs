@@ -1,0 +1,14 @@
+<%- include('partials/header', { title: 'All Posts' }) %>
+<h1>All Posts</h1>
+<ul>
+  <% posts.forEach(function(post) { %>
+    <li>
+      <a href="/posts/<%= post._id %>"><%= post.title %></a>
+      <form action="/posts/<%= post._id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }); %>
+</ul>
+<a href="/posts/new">Create New Post</a>
+<%- include('partials/footer') %>

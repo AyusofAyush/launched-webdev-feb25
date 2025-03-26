@@ -1,0 +1,5 @@
+<%- include('partials/header', { title: post.title }) %>
+<h1><%= post.title %></h1>
+<p><%= post.content %></p>
+<a href="/posts/<%= post._id %>/edit">Edit Post</a>
+<%- include('partials/footer') %>
