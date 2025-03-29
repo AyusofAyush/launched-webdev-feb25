@@ -1,0 +1,101 @@
+/* src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+  margin: 0;
+}
+
+input[type="text"] {
+  width: calc(100% - 80px);
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #b2dffc;
+  cursor: not-allowed;
+}
+
+.post {
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+}
+
+.post-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.post-content {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.post button {
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #999;
+}
