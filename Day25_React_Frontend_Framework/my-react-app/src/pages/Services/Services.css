@@ -1,0 +1,27 @@
+/* src/pages/Services/Services.css */
+.services {
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    width: 80%;
+    border-radius: 8px;
+  }
+  .services h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #6e8efb;
+  }
+  .services p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  .services ul {
+    list-style-type: square;
+    padding-left: 1rem;
+  }
+  .services li {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  

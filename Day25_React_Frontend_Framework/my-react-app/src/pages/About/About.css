@@ -1,0 +1,19 @@
+/* src/pages/About/About.css */
+.about {
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    width: 80%;
+    border-radius: 8px;
+  }
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #6e8efb;
+  }
+  .about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
