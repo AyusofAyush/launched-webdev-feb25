@@ -1,0 +1,40 @@
+.player {
+    background-color: #181818;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .player__song-info h2 {
+    font-size: 20px;
+    color: #1DB954;
+  }
+  
+  .player__song-info p {
+    color: #b3b3b3;
+  }
+  
+  .audio-control {
+    margin: 20px 0;
+    width: 80%;
+  }
+  
+  .player__controls .control-btn {
+    background-color: #1DB954;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .player__controls .control-btn:hover {
+    background-color: #1ed760;
+  }
+  

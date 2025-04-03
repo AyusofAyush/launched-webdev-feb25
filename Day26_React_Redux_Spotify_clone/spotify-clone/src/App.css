@@ -1,0 +1,25 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.App {
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+header,
+.playlist,
+.player {
+  max-width: 800px;
+  margin: 0 auto;
+}
