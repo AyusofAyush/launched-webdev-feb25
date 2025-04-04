@@ -1,0 +1,25 @@
+.add-todo-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .todo-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+  }
+  
+  .add-todo-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
