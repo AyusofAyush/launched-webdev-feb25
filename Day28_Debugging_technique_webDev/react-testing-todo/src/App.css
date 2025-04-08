@@ -1,0 +1,8 @@
+/* src/App.css */
+.App {
+  text-align: center;
+}
+
+.completed {
+  text-decoration: line-through;
+}
